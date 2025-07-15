@@ -8,3 +8,14 @@ jobs:
     steps:
       - name: infos de mon contexte github
         run: echo "${{ toJSON(github) }}"
+
+  variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: mes variables d'environnement
+        env:
+          VARIABLE: ${{ vars.VARIABLE }}
+          SECRET: ${{ secrets.SECRET }}
+        run: |
+          echo "Le secret est $SECRET"
+          echo "La variable est $VARIABLE"
