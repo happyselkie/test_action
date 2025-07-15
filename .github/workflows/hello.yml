@@ -2,12 +2,17 @@
 name: Premier Workflow
 
 # On précise quel est le déclencheur de notre workflow
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
 
 # Ce qu'il doit faire
 jobs:
   # Définition de la première action à réaliser
-  premier-job :
+  premier-job:
     # Préciser le système d'exploitation (runner)
     runs-on: ubuntu-latest
 
