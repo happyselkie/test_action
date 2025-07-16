@@ -18,7 +18,7 @@ jobs:
           echo "build factice" > target/app-demo.jar
 
       - name: Upload artefact
-        if: success() && github.ref == 'refs/head/main'
+        if: success() && github.ref == 'refs/heads/main'
         use: actions/upload-artefact@v4
         with:
           name: build_app
