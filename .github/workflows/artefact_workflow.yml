@@ -19,7 +19,7 @@ jobs:
 
       - name: Upload artefact
         if: success() && github.ref == 'refs/heads/main'
-        use: actions/upload-artefact@v4
+        uses: actions/upload-artefact@v4
         with:
           name: build_app
           path: target/*.jar
