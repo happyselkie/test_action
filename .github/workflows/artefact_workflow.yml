@@ -10,9 +10,9 @@ jobs:
 
     steps:
       - name: Checkout du projet
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
 
-      - name: simuler un build
+      - name: Simuler un build
         run: |
           mkdir -p target
           echo "build factice" > target/app-demo.jar
