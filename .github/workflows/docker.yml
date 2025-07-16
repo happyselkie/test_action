@@ -12,18 +12,18 @@ jobs:
       USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
       PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      steps:
-        - name: login dockerhub
-          uses: docker/login-action@v3
-          with:
-            username: ${{ env.USERNAME }}
-            password: ${{ env.PASSWORD }}
+    steps:
+      - name: login dockerhub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ env.USERNAME }}
+          password: ${{ env.PASSWORD }}
 
-        - name: checkout code
-          uses: actions/checkout@v4
+      - name: checkout code
+        uses: actions/checkout@v4
 
-        - name: build docker image
-          run: docker build -t $USERNAME/actionimage .
+      - name: build docker image
+        run: docker build -t $USERNAME/actionimage .
 
-        - name: push sur dockerhub
-          run: docker push $USERNAME/actionimage
+      - name: push sur dockerhub
+        run: docker push $USERNAME/actionimage
